@@ -1,9 +1,23 @@
 class Casino {
-    // Write code here
+    constructor(casinoName, playerName) {
+        this.casinoName = casinoName;
+        this.playerName = playerName;
+        this.timesPlayed = 0;
+    }
+    playGame(betAmount) {
+        if (Math.random() <= 0.5) {
+            console.log(this.casinoName + " wins");
+        }
+        else {
+            console.log(`${this.playerName} wins ${betAmount * (this.timesPlayed + 1)}`
+            );
+            this.timesPlayed++
+        }
+    }
 };
 
 // TESTS
-const myCasino = new Casino("HackerU Casino");
+const myCasino = new Casino("HackerU Casino", "Matthew");
 console.log(myCasino);
 myCasino.playGame(5);
 myCasino.playGame(15);
